@@ -1,4 +1,4 @@
-  """
+"""
 Code before making snake head image
 
  game.draw.rect(DisplayScreen, color_red, [XpositionApple, YpositionApple, Width_Apple, Width_Apple])

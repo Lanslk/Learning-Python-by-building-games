@@ -3,7 +3,7 @@ class Speed:
         self.set_speed(speed)
 
     def change_to_mile(self):
-        return (self.get_speed*0.6213," miles")
+        return (self.get_speed()*0.6213," miles")
     
 #new updates are made as follows using getter and setter
     def get_speed(self):

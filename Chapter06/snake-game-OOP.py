@@ -150,7 +150,7 @@ if __name__ == '__main__':
         window.addstr(0, 5, snake.score)
         event = window.getch()
 
-        if event == 27:
+        if event == 27: # esc
             break
 
         if event in [KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]:
@@ -159,9 +159,13 @@ if __name__ == '__main__':
         if snake.head.x == food.x and snake.head.y == food.y:
             snake.eat_food(food)
 
-        if event == 32:
+        if event == 32:  # space
             key = -1
+            window.clear()
+            window.border(0)
+            window.addstr(9, 15, 'pause')
             while key != 32:
+
                 key = window.getch()
 
         snake.update()

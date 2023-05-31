@@ -6,6 +6,7 @@
 import collections
 import math
 import os
+from _collections_abc import Sequence
 
 
 
@@ -38,7 +39,7 @@ def square(x, y, size, name):
     turtle.end_fill()
 
 
-class vector(collections.Sequence):
+class vector(Sequence):
     """Two-dimensional vector.
 
     Vectors can be modified in-place.

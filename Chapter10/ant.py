@@ -12,12 +12,17 @@ Exercises
 from random import *
 from turtle import *
 from base import vector
+from base import line
 
 ant = vector(0, 0)
 aim = vector(2, 0)
 
 def wrap(value):
     "Wrap value around -200 and 200."
+    if value > 200:
+        value = -200
+    elif value < -200:
+        value = 200
     return value  # TODO
 
 def draw():
@@ -29,9 +34,19 @@ def draw():
     aim.move(random() - 0.5)
     aim.rotate(random() * 10 - 5)
 
-    clear()
+    #clear()
     goto(ant.x, ant.y)
-    dot(10)
+    color = ''
+    if (int(ant.x) > 0 and int(ant.y) > 0):
+        color = 'blue'
+    elif (int(ant.x) > 0 and int(ant.y) < 0):
+        color = 'green'
+    elif (int(ant.x) < 0 and int(ant.y) < 0):
+        color = 'yellow'
+    else:
+        color = 'red'
+    dot(10, color)
+
 
     if running:
         ontimer(draw, 100)
